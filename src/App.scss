@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+body {
+  background-color: rgb(54, 54, 54);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coin-image {
+  width: 50px;
+}
+
+.coin-item {
+  display: flex;
+}
+
+.coin-summary {
+  border-color: aliceblue !important;
+  border-style: outset !important;
+}
+
+.coin-data-type {
+  font-size: 10px;
+}
+
+.delete-icon {
+  display: none;
+  position: absolute;
+  right: 120px;
+  margin: 3px;
+}
+
+.delete-icon:hover {
+  display: block;
+}

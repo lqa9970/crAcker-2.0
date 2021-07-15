@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import ChartPage from "./pages/ChartPage";
+import AllCoinPage from "./pages/AllCoinPage";
+import Nav from "./components/Nav";
+import { WatchListContextProvider } from "./context/watchListContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <WatchListContextProvider>
+        <BrowserRouter>
+          <Nav />
+          <Route exact path="/" component={AllCoinPage} />
+        </BrowserRouter>
+      </WatchListContextProvider>
     </div>
   );
 }
