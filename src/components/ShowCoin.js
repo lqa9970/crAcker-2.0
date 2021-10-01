@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import coinAPI from "../api/coinGecko";
-import WatchListContext from "../context/watchListContext";
+// import WatchListContext from "../context/watchListContext";
 import Coin from "../components/Coin";
 
 const ShowCoin = () => {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const watchList = useContext(WatchListContext);
+  // const watchList = useContext(WatchListContext);
   const [coinList, setCoinList] = useState([
     "bitcoin",
     "ethereum",
@@ -48,7 +48,7 @@ const ShowCoin = () => {
       setIsLoading(true);
       const response = await coinAPI.get("/coins/markets/", {
         params: {
-          vs_currency: "usd",
+          vs_currency: "eur",
           ids: coinList.join(","),
         },
       });

@@ -14,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Nav />
           <Route exact path="/" component={AllCoinPage} />
+          <Route exact path="/coins/:id" component={ChartPage} />
         </BrowserRouter>
       </WatchListContextProvider>
     </div>

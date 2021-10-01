@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Coin = ({ coin, handleDeleteCoins }) => {
   return (
-    <Link to="../pages/ChartPage.js" className="text-decoration-none my-1 coin">
+    <Link to={`/coins/${coin.id}`} className="text-decoration-none my-1 coin">
       <li
         className="coin-item list-group-item list-group-item-action
        d-flex justify-content-between align-items-center"
