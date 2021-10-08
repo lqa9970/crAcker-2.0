@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import coinAPI from "../api/coinGecko";
 // import WatchListContext from "../context/watchListContext";
 import Coin from "../components/Coin";
+import AddCoin from "../components/AddCoin";
 
 const ShowCoin = () => {
   const [coins, setCoins] = useState([]);
@@ -14,6 +15,12 @@ const ShowCoin = () => {
     "dogecoin",
   ]);
   // const handleDeleteCoins = useContext(WatchListContext);
+
+  const handleAddCoins = (coin) => {
+    if (coinList.indexOf(coin) === -1) {
+      setCoinList([...coinList, coin]);
+    }
+  };
 
   const handleDeleteCoins = (coin) => {
     setCoinList(
@@ -28,17 +35,20 @@ const ShowCoin = () => {
       return <div>Loading....</div>;
     } else {
       return (
-        <ul>
-          {coins.map((coin) => {
-            return (
-              <Coin
-                key={coin.id}
-                coin={coin}
-                handleDeleteCoins={handleDeleteCoins}
-              />
-            );
-          })}
-        </ul>
+        <>
+          <AddCoin handleAddCoins={handleAddCoins} />
+          <ul>
+            {coins.map((coin) => {
+              return (
+                <Coin
+                  key={coin.id}
+                  coin={coin}
+                  handleDeleteCoins={handleDeleteCoins}
+                />
+              );
+            })}
+          </ul>
+        </>
       );
     }
   };

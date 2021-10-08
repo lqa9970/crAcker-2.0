@@ -4,7 +4,6 @@ import Chart from "chart.js/auto";
 
 const CoinChart = ({ data }) => {
   const chartRef = useRef();
-  const canvasRef = (useRef < HTMLCanvasElement) | (null > null);
   const { day, week, month, year, detail } = data;
   const [isRebuildingCanvas, setIsRebuildingCanvas] = useState(false);
   const [timeFormat, setTimeFormat] = useState("24h");
@@ -26,7 +25,7 @@ const CoinChart = ({ data }) => {
       //   return;
       // }
       // console.log(1, "henlo");
-      const chartInstance = new Chart(chartRef.current, {
+      let chartInstance = new Chart(chartRef.current, {
         type: "line",
         data: {
           datasets: [
@@ -61,8 +60,6 @@ const CoinChart = ({ data }) => {
           },
         },
       });
-
-      chartInstance.destroy();
     }
   });
 
