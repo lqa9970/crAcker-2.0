@@ -15,6 +15,20 @@ ul {
   padding: 0;
 }
 
+h1 {
+  color: white;
+}
+
+.font30 {
+  font-size: 30px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+////////////////////////////////
+
 .coin-image {
   width: 50px;
 }
@@ -31,6 +45,11 @@ ul {
   font-size: 10px;
 }
 
+.coin-shadow:hover {
+  transition: box-shadow 0.5s;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
 .delete-icon {
   display: none;
   position: absolute;
@@ -42,10 +61,6 @@ ul {
   display: block;
 }
 
-h1 {
-  color: white;
-}
-
 .ocean {
   background-color: rgb(49, 130, 189);
 }
@@ -53,7 +68,4 @@ h1 {
   background-color: rgb(49, 130, 189);
 }
 
-.coin-shadow:hover {
-  transition: box-shadow 0.5s;
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-}
+////////////////////////////////

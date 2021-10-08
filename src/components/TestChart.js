@@ -33,7 +33,7 @@ const TestChart = ({ tableData }) => {
     if (detail) {
       return (
         <>
-          <p className="my-0 text-primary text-center">
+          <p className="my-0 text-dark text-center">
             {detail.name} price trend
           </p>
         </>
@@ -45,12 +45,15 @@ const TestChart = ({ tableData }) => {
     if (detail) {
       return (
         <>
-          <p className="my-0 white">€{detail.current_price.toFixed(2)}</p>
+          <img src={detail.image} alt={detail.name} className="coin-image" />
+          <p className="font30 my-0 white">
+            €{detail.current_price.toFixed(2)}
+          </p>
           <p
             className={
               detail.price_change_percentage_24h < 0
-                ? "text-danger my-0"
-                : "text-success my-0"
+                ? "font20 text-danger mb-4"
+                : "font20 text-success mb-4"
             }
           >
             {detail.price_change_percentage_24h.toFixed(2)}%
@@ -76,7 +79,7 @@ const TestChart = ({ tableData }) => {
               dataKey="price"
               stroke="#2451B7"
             />
-            <XAxis dataKey="time" />
+            <XAxis className="ocean" dataKey="time" />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" stroke="grey" />

@@ -1,0 +1,54 @@
+.ballBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 180px;
+}
+
+.rollingCoin {
+  position: relative;
+  bottom: 100px;
+  left: calc(100% - 70px);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: coin-move ease-in-out 3s infinite alternate;
+}
+.rollingCoin::after {
+  position: absolute;
+  content: "";
+  top: 50px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+}
+.bar {
+  width: 500px;
+  height: 25px;
+  background-color: #f7ffff;
+  border: 0.5px solid #b7b5bd;
+  border-radius: 30px;
+  transform: rotate(-15deg);
+  filter: drop-shadow(20px 10px 4px gray);
+  animation: up-down ease-in-out 3s infinite alternate;
+}
+@keyframes up-down {
+  from {
+    transform: rotate(-15deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
+}
+@keyframes coin-move {
+  from {
+    left: calc(100% - 70px);
+    transform: rotate(360deg);
+  }
+  to {
+    left: calc(0% - 35px);
+    transform: rotate(0deg);
+  }
+}

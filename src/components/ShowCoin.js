@@ -3,6 +3,7 @@ import coinAPI from "../api/coinGecko";
 // import WatchListContext from "../context/watchListContext";
 import Coin from "../components/Coin";
 import AddCoin from "../components/AddCoin";
+import CoinAnimation from "../components/CoinAnimation/CoinAnimation";
 
 const ShowCoin = () => {
   const [coins, setCoins] = useState([]);
@@ -35,7 +36,7 @@ const ShowCoin = () => {
       return <div>Loading....</div>;
     } else {
       return (
-        <>
+        <div className="coin-summary shadow-lg border p-2 rounded mt-2 bg-light">
           <AddCoin handleAddCoins={handleAddCoins} />
           <ul>
             {coins.map((coin) => {
@@ -48,7 +49,7 @@ const ShowCoin = () => {
               );
             })}
           </ul>
-        </>
+        </div>
       );
     }
   };

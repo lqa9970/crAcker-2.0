@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <div>
       <h1 className="text-center mt-3 mb-4">
-        <a href="" className="text-dark">
+        <Link to="/" className="text-dark">
           Coinance
-        </a>
+        </Link>
       </h1>
     </div>
   );

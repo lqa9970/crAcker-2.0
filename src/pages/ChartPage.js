@@ -12,7 +12,7 @@ const ChartPage = () => {
 
   const convertTime = (x) => {
     let options = { day: "numeric", month: "2-digit" };
-    return new Date(x).toLocaleDateString("fi-FI", options);
+    return new Date(x).toLocaleDateString("en-US", options);
   };
 
   const convertTimeInDay = (x) => {
@@ -22,17 +22,19 @@ const ChartPage = () => {
 
   const changeData = (data) => {
     return data.map((el) => {
-      if ((data = coinData.day)) {
-        return {
-          time: convertTimeInDay(el[0]),
-          price: el[1].toFixed(3),
-        };
-      } else {
-        return {
-          time: convertTime(el[0]),
-          price: el[1].toFixed(3),
-        };
-      }
+      return {
+        time: convertTime(el[0]),
+        price: el[1].toFixed(3),
+      };
+    });
+  };
+
+  const changeDayData = (data) => {
+    return data.map((el) => {
+      return {
+        time: convertTimeInDay(el[0]),
+        price: el[1].toFixed(3),
+      };
     });
   };
 
@@ -61,7 +63,7 @@ const ChartPage = () => {
       ]);
 
       setCoinData({
-        day: changeData(day.data.prices),
+        day: changeDayData(day.data.prices),
         week: changeData(week.data.prices),
         month: changeData(month.data.prices),
         year: changeData(year.data.prices),

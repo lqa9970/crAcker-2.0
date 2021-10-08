@@ -1,6 +1,7 @@
 import React from "react";
 import AddCoin from "../components/AddCoin";
 import ShowCoin from "../components/ShowCoin";
+import CoinAnimation from "../components/CoinAnimation/CoinAnimation";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const AllCoinPage = () => {
@@ -25,9 +26,12 @@ const AllCoinPage = () => {
     //     </Switch>
     //   </div>
     // </Router>
-    <div className="coin-summary shadow-lg border p-2 rounded mt-2 bg-light">
-      <ShowCoin />
-    </div>
+    <>
+      <div>
+        <ShowCoin />
+      </div>
+      <CoinAnimation />
+    </>
   );
 };
 

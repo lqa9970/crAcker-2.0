@@ -35,7 +35,10 @@ const AddCoin = ({ handleAddCoins }) => {
         <Dropdown.Menu>
           {availableCoins.map((el) => {
             return (
-              <Dropdown.Item onClick={() => handleClick(el)}>
+              <Dropdown.Item
+                key={availableCoins.indexOf(el)}
+                onClick={() => handleClick(el)}
+              >
                 {el}
               </Dropdown.Item>
             );
