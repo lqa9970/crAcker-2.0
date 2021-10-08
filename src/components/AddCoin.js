@@ -4,11 +4,17 @@ import { Dropdown } from "react-bootstrap";
 const AddCoin = ({ handleAddCoins }) => {
   const availableCoins = [
     "bitcoin",
-    "tether",
     "ethereum",
+    "tether",
+    "cardano",
+    "binancecoin",
+    "ripple",
+    "solana",
+    "usd-coin",
+    "polkadot",
+    "dogecoin",
     "okb",
     "tezos",
-    "cardano",
     "eos",
     "litecoin",
   ];

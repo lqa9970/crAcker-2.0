@@ -9,12 +9,7 @@ const ShowCoin = () => {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   // const watchList = useContext(WatchListContext);
-  const [coinList, setCoinList] = useState([
-    "bitcoin",
-    "ethereum",
-    "tether",
-    "dogecoin",
-  ]);
+  const [coinList, setCoinList] = useState(["bitcoin", "ethereum", "tether"]);
   // const handleDeleteCoins = useContext(WatchListContext);
 
   const handleAddCoins = (coin) => {
